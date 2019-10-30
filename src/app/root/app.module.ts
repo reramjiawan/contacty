@@ -14,7 +14,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    IonicModule.forRoot(),
+    IonicModule.forRoot({
+      mode: 'md'
+    }),
     environment.production ? [] : AkitaNgDevtools.forRoot(),
     AppRoutingModule
   ],
