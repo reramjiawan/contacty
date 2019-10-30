@@ -19,7 +19,7 @@ export class ContactGuard implements CanActivate {
     if (!this.previous) {
       this.previous = can;
     }
-    if (!!can && can.id !== this.previous.id) {
+    if (!this.previous || can.id !== this.previous.id) {
       this.contact.setActive(next.params.id);
     }
     return !!can;
