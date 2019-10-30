@@ -18,8 +18,9 @@ export class ContactGuard implements CanActivate {
     const can = this.contactQuery.getEntity(next.params.id);
     if (!this.previous) {
       this.previous = can;
+      this.contact.setActive(next.params.id);
     }
-    if (!this.previous || can.id !== this.previous.id) {
+    if (can.id !== this.previous.id) {
       this.contact.setActive(next.params.id);
     }
     return !!can;
