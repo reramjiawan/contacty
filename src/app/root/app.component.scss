@@ -1,0 +1,13 @@
+ion-app {
+  box-shadow: 0 0 3px 1px rgba(black, 0.15);
+  margin: auto;
+  max-width: 600px;
+}
+
+.copy {
+  font-size: 10px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 999;
+}

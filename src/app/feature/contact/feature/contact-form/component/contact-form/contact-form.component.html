@@ -1,0 +1,45 @@
+<form [formGroup]="form">
+  <ion-list>
+
+    <ion-item *ngIf="form.get('firstName') as firstName">
+      <ion-icon name="person" slot="start"></ion-icon>
+      <ion-label position="floating">
+        First name
+        <app-form-error [color]="firstName.invalid && firstName.dirty ? 'danger': ''" [errorMessages]="errorMessages"
+          [errors]="firstName.errors"></app-form-error>
+      </ion-label>
+      <ion-input [formControl]="firstName"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="form.get('lastName') as lastName">
+      <ion-icon name="person" slot="start"></ion-icon>
+      <ion-label position="floating">
+        Last name
+        <app-form-error [color]="lastName.invalid && lastName.dirty ? 'danger': ''" [errorMessages]="errorMessages"
+          [errors]="lastName.errors"></app-form-error>
+      </ion-label>
+      <ion-input [formControl]="lastName"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="form.get('email') as email">
+      <ion-icon name="mail" slot="start"></ion-icon>
+      <ion-label position="floating">
+        E-mail
+        <app-form-error [color]="email.invalid && email.dirty ? 'danger': ''" [errorMessages]="errorMessages"
+          [errors]="email.errors"></app-form-error>
+      </ion-label>
+      <ion-input [formControl]="email"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="form.get('mobile') as mobile">
+      <ion-icon name="call" slot="start"></ion-icon>
+      <ion-label position="floating">
+        Mobile
+        <app-form-error [color]="mobile.invalid && mobile.dirty ? 'danger': ''" [errorMessages]="errorMessages"
+          [errors]="mobile.errors"></app-form-error>
+      </ion-label>
+      <ion-input [formControl]="mobile"></ion-input>
+    </ion-item>
+
+  </ion-list>
+</form>

@@ -1,0 +1,4 @@
+<ion-note *ngFor="let error of errors | keyvalue; trackBy: keepTrack">
+  <ion-icon [color]="color" class="ion-margin-end" name="information-circle-outline" size="small"></ion-icon>
+  <ion-text *ngIf="errorMessages" [color]="color">{{ errorMessages[error.key] }}</ion-text>
+</ion-note>

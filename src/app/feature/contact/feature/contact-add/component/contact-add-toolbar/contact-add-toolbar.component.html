@@ -1,0 +1,15 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button (click)="action.emit({type: 'back'})">
+      <ion-icon name="close" slot="icon-only"></ion-icon>
+    </ion-button>
+    <ion-title>
+      Add contact
+    </ion-title>
+  </ion-buttons>
+  <ion-buttons slot="end">
+    <ion-button (click)="action.emit({type: 'save'})" [disabled]="form.invalid" color="primary">
+      Save
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>

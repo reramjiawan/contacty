@@ -1,0 +1,14 @@
+<ion-tab-bar>
+  <ion-tab-button (click)="action.emit({type: 'navigate', payload: '/contact'})" [selected]="url === '/contact'">
+    <ion-icon name="people"></ion-icon>
+    <ion-label>Contacts</ion-label>
+  </ion-tab-button>
+  <ion-tab-button (click)="action.emit({type: 'navigate', payload: '/favourite'})" [selected]="url === '/favourite'">
+    <ion-icon name="star"></ion-icon>
+    <ion-label>Favourites</ion-label>
+  </ion-tab-button>
+  <ion-tab-button (click)="action.emit({type: 'navigate', payload: '/about'})" [selected]="url === '/about'">
+    <ion-icon name="information-circle"></ion-icon>
+    <ion-label>About</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>

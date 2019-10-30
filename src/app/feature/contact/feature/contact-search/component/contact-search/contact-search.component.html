@@ -1,0 +1,32 @@
+<ion-list *ngIf="(contacts | keyvalue).length; else empty">
+  <ion-item (click)="action.emit({payload: contact.key, type:
+  'contact'})" *ngFor="let contact of contacts | keyvalue: keepOrder; trackBy: keepTrack" [button]="true" lines="none">
+    <ion-avatar slot="start">
+      <ion-img src="https://eu.ui-avatars.com/api/?name={{ contact.value.name }}"></ion-img>
+    </ion-avatar>
+    <ion-label>
+      <span [innerHTML]="contact.value.name | highlight: term"></span>
+    </ion-label>
+  </ion-item>
+</ion-list>
+
+<ng-template #empty>
+
+  <ng-container *ngIf="term; else search">
+    <app-empty icon="search" title="No results">
+      No contacts found with your search term.
+      <div class="ion-padding-top">
+        <ion-button (click)="action.emit({type: 'add'})" fill="clear">
+          Add Contact
+        </ion-button>
+      </div>
+    </app-empty>
+  </ng-container>
+
+  <ng-template #search>
+    <app-empty icon="search" title="Search contacts">
+      Start typing to find your contacts
+    </app-empty>
+  </ng-template>
+
+</ng-template>

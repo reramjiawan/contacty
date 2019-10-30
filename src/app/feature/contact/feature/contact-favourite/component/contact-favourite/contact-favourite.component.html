@@ -1,0 +1,24 @@
+<ion-list *ngIf="(favourites | keyvalue).length; else empty">
+  <ion-button (click)="action.emit({type: 'favourite'})" expand="full" fill="clear">
+    <ion-icon name="person-add" slot="start"></ion-icon>
+    Add Favourite
+  </ion-button>
+  <ion-item (click)="action.emit({payload: contact.key, type:
+  'contact'})" *ngFor="let contact of favourites | keyvalue: keepOrder; trackBy: keepTrack" [button]="true" lines="none">
+    <ion-avatar slot="start">
+      <ion-img src="https://eu.ui-avatars.com/api/?name={{ contact.value.name }}"></ion-img>
+    </ion-avatar>
+    <ion-label>{{ contact.value.name }}</ion-label>
+  </ion-item>
+</ion-list>
+
+<ng-template #empty>
+  <app-empty icon="star" title="No favourites">
+    You have no favourites. Add your first favourite contact now!
+    <div class="ion-padding-top">
+      <ion-button (click)="action.emit({type: 'favourite'})" fill="clear">
+        Add Favourite
+      </ion-button>
+    </div>
+  </app-empty>
+</ng-template>

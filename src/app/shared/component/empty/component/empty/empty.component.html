@@ -1,0 +1,13 @@
+<ion-card class="ion-text-center">
+  <ion-card-header>
+    <ion-card-title>
+      <div *ngIf="icon" class="ion-padding-bottom">
+        <ion-icon [name]="icon"></ion-icon>
+      </div>
+      {{ title }}
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ng-content></ng-content>
+  </ion-card-content>
+</ion-card>

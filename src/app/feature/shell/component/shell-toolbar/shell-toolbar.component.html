@@ -1,0 +1,4 @@
+<ion-toolbar>
+  <ion-searchbar (ionBlur)="action.emit($event)" (ionCancel)="action.emit($event)" (ionChange)="action.emit($event)"
+    (ionFocus)="action.emit($event)" [showCancelButton]="cancelButton" [value]="term" debounce="100"></ion-searchbar>
+</ion-toolbar>

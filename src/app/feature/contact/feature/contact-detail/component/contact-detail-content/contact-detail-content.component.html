@@ -1,0 +1,20 @@
+<div class="ion-margin-vertical">
+  <ion-avatar>
+    <ion-img src="https://eu.ui-avatars.com/api/?name={{ contact.name }}"></ion-img>
+  </ion-avatar>
+</div>
+<ion-item-divider class="ion-no-padding">
+  <ion-label>
+    {{ contact.name }}
+  </ion-label>
+</ion-item-divider>
+<ion-list>
+  <ion-item href="mailto:{{ contact.email }}">
+    <ion-icon name="mail" slot="start"></ion-icon>
+    <ion-label>{{ contact.email }}</ion-label>
+  </ion-item>
+  <ion-item href="tel:{{ contact.mobile }}">
+    <ion-icon name="call" slot="start"></ion-icon>
+    <ion-label>{{ contact.mobile }}</ion-label>
+  </ion-item>
+</ion-list>

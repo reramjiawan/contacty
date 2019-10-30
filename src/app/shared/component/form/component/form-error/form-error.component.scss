@@ -1,0 +1,15 @@
+:host {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+ion-note {
+  align-items: center;
+  display: none;
+
+  &:first-child {
+    display: flex;
+  }
+}
