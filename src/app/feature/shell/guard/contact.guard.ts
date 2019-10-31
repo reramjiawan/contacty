@@ -13,10 +13,10 @@ export class ContactGuard implements CanActivate {
 
   canActivate(next: ActivatedRouteSnapshot) {
     const can = this.contactQuery.getEntity(next.params.id);
-    if (!!can) {
+    const activeId = this.contactQuery.getActiveId();
+    if (!!can && can.id !== activeId) {
       this.contact.setActive(next.params.id);
     }
     return !!can;
   }
-
 }
